@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eid ul-Adha Countdown</title>
+<style>
+    
+</style>
+<style>
+    #countdown {
+        font-size: 24px;
+        text-align: center;
+    }
+</style>
+</head>
+<body style="background-color: antiquewhite;">
+
+<h1 style="text-align: center;">Countdown to Eid ul-Adha</h1>
+<div id="countdown"></div>
+
+<script>
+// Function to calculate time remaining until Eid ul-Adha
+function calculateTimeUntilEidUlAdha() {
+    // Eid ul-Adha date (replace with actual date)
+    const eidUlAdhaDate = new Date("2024-06-17");
+    
+    // Current date
+    const currentDate = new Date();
+    
+    // Calculate time difference
+    const timeDifference = eidUlAdhaDate - currentDate;
+    
+    // Calculate days, hours, minutes, and seconds
+    const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+    
+    // Display the countdown
+    document.getElementById("countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+}
+
+// Update the countdown every second
+setInterval(calculateTimeUntilEidUlAdha, 1000);
+
+// Initial call to display countdown immediately
+calculateTimeUntilEidUlAdha();
+</script>
+
+</body>
+</html>
